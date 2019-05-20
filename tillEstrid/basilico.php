@@ -58,7 +58,7 @@ include('processes/session.php');
     </section>
     <section id="sidebar"> 
       <input type="text" placeholder="Search">
-      <div id="adimage"><img src="assets/img/litenbannan.png" alt=""/></div>
+      <div id="adimage"><img src="assets/img/trensstallen.jpg" alt=""/></div>
       <nav>
         <ul>
           <li><a href="postTip.php" title="Link">Post a tip</a></li>
