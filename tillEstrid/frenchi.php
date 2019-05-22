@@ -68,13 +68,13 @@
 				}
 				
 				$activeRestaurant = "Frenchi";
-				$sql = "SELECT tipid, title, content, userid FROM Tips, Restaurants WHERE Tips.restaurantid = Restaurants.id AND Restaurants.name = '$activeRestaurant'";
+				$sql = "SELECT tipid, title, content, email FROM Tips, Restaurants, Webusers WHERE Tips.restaurantid = Restaurants.id AND Restaurants.name = '$activeRestaurant'
+						AND Webusers.userid = Tips.userid";
 				$result = $connection->query($sql);
-		 		$user = $_SESSION['login_user'];
 
 				if ($result->num_rows > 0) {
 					while($row = $result->fetch_assoc()) { 
-						print("<p><h3>TipID: ". $row["tipid"]."<br>Tip: ". $row["title"]. "</h3><h4>Posted by: ".$user."</h4>  <h2> ".$row["content"]. "</h2><br> </p>");
+						print("<p><h3>TipID: ". $row["tipid"]."<br>Tip: ". $row["title"]. "</h3><h4>Posted by: ".$row["email"]."</h4>  <h2> ".$row["content"]. "</h2><br> </p>");
 					}
 					if($count > 0){
 						print("<form name = inputForm action=processes/deleteTip.php onsubmit = return validateForm() method = post>
