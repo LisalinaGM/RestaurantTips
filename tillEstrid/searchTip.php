@@ -10,6 +10,9 @@
 	{
 		die("Connection failed: ".$connection.connect_error);
 	}
+
+	include('processes/session.php');
+
 	$output='';
 	if(isset($_POST['search'])){
 		$searched = mysqli_real_escape_string($connection, $_POST["search"]);
