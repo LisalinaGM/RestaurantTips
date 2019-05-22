@@ -79,7 +79,7 @@
 					if($count > 0){
 						print("<form name = inputForm action=processes/deleteTip.php onsubmit = return validateForm() method = post>
 						<br><input type=text id=delete name=delete placeholder= TipID.. > 
-						<br><input type=submit value = Delete>");
+						<input type=submit value = Delete>");
 					}
 				}
 				$connection->close();
