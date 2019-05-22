@@ -1,5 +1,25 @@
 <?php
-include('processes/session.php');
+	$uname = "dbtrain_1036";
+	$pass = "xotlno";
+	$host = "dbtrain.im.uu.se";
+	$dbname = "dbtrain_1036";
+	
+	$connection =  new mysqli($host, $uname, $pass, $dbname);
+	
+	if($connection -> connect_error)
+	{
+		die("Connection failed: ".$connection.connect_error);
+	}
+	include('processes/session.php');
+	$activeEmail = $_SESSION['login_user'];
+	$queryUser = "SELECT userid FROM Webusers WHERE email = '$activeEmail'";
+	$resultUserID = mysqli_query($connection, $queryUser);
+	$rowUserID = $resultUserID->fetch_assoc();
+	$userID = $rowUserID['userid'];
+	
+	$queryAdmin = "SELECT adminid FROM Admin WHERE userid = '$userID'";
+	$resultAdmin = $connection -> query($queryAdmin);
+	$count = $resultAdmin-> num_rows;
 ?>
 <!doctype html>
 <html>
@@ -54,7 +74,12 @@ include('processes/session.php');
 
 				if ($result->num_rows > 0) {
 					while($row = $result->fetch_assoc()) { 
-						 echo "<p><h3>TipID: ". $row["tipid"]."<br>Tip: ". $row["title"]. "</h3><h4>Posted by: ".$user."</h4>  <h2> ".$row["content"]. "</h2><br> </p>";
+						print("<p><h3>TipID: ". $row["tipid"]."<br>Tip: ". $row["title"]. "</h3><h4>Posted by: ".$user."</h4>  <h2> ".$row["content"]. "</h2><br> </p>");
+					}
+					if($count > 0){
+						print("<form name = inputForm action=processes/deleteTip.php onsubmit = return validateForm() method = post>
+						<br><input type=text id=delete name=delete placeholder= TipID.. > 
+						<br><input type=submit value = Delete>");
 					}
 				}
 				$connection->close();
