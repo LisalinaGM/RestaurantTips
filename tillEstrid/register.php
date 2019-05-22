@@ -27,8 +27,7 @@
 		<aside id="authorInfo"> 
 		</aside>
     </section>
-    <section id="sidebar"> 
-      <input type="text" placeholder="Search">
+    <section id="sidebar">
       <div id="adimage"><img src="assets/img/trensstallen.jpg" alt=""/></div>
       <nav>
         <ul>
