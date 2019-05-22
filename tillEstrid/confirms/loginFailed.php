@@ -17,29 +17,21 @@
   <div id="content">
     <section id="mainContent"> 
 
-      <h1>Login Here!</h1>
-		<p> Fill in your email-address and your password to login.</p>
-		<p> Login failed, try again!</p>
-		<form name = "inputForm" action="../processes/loginProcess.php" onsubmit = "return validateForm()" method = "post">
-			<br><label for="email">Email-address</label>
-			<br><input type="text" id="email" name="email" placeholder="ex. lisa@gmail.com">
-			<br><label for="fname">Password</label>
-			<br><input type="text" id="password" name="password" placeholder="ex. xtlno">
-			<br><input type="submit" value="Login!">
-		</form><aside id="authorInfo"> 
+      <h1>Login Failed!</h1>
      </aside>
     </section>
     <section id="sidebar"> 
-      <input type="text" placeholder="Search">
       <div id="adimage"><img src="../assets/img/trensstallen.jpg"/></div>
       <nav>
         <ul>
+			<li><a href="../start.php" title="Link">Home</a></li>
+			<li><a href="../searchTip.php" title="Link">Search for Tips</a></li>
           <li><a href="../postTip.php" title="Link">Post a tip</a></li>
           <li><a href="../basilico.php" title="Link">Basilico</a></li>
           <li><a href="../frenchi.php" title="Link">Frenchi</a></li>
           <li><a href="#" title="Link">Iberico</a></li>
           <li><a href="#" title="Link">Aaltos</a></li>
-          <li><a href="../start.php" title="Link">Home</a></li>
+          <li><a href="#" title="Link">Contact us</a></li>
         </ul>
       </nav>
     </section>
