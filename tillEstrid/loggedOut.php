@@ -25,7 +25,6 @@ session_destroy()
 	  </aside>
     </section>
     <section id="sidebar"> 
-      <input type="text" placeholder="Search">
       <div id="adimage"><img src="assets/img/trensstallen.jpg" alt=""/></div>
       <nav>
         <ul>
