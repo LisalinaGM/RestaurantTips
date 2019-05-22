@@ -33,6 +33,6 @@
 	}
 	else{
 		echo "<br> login failed";
-		header("Refresh: 5; URL=../login.php");
+		header("Refresh: 5; URL=../confirms/loginFailed.php");
 	}
 ?>
