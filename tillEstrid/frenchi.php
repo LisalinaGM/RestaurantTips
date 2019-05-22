@@ -24,6 +24,9 @@
 <!doctype html>
 <html>
 	<head>
+		<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+   		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/leaflet.css" />
+    		<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.1/leaflet.js"></script>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>frenchi</title>
@@ -50,6 +53,22 @@
 		Otherwise the dining area is large with seating for a party over 40 persons. The restaurant is located in the centre of Uppsala.</p>
 
 		<p> Visit the home page for the restaurant on this link here, <a href="https://frenchi.se/">Frenchi.</a> </p>
+		
+		<div id="map"></div>
+		<p><a href="https://www.maptiler.com/copyright/" target="_blank">© MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">© OpenStreetMap contributors</a></p>
+    		<script>
+      		var map = L.map('map').setView([59.859111, 17.639168], 13); //Longitut/latitut hämtas hit
+      		L.tileLayer('https://api.maptiler.com/maps/basic/{z}/{x}/{y}.png?key=P2iACt3rAspoasQ6yeaY',{
+       		tileSize: 512, 
+        	zoomOffset: -1,
+        	minZoom: 1,
+        	attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">© MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">© OpenStreetMap contributors</a>',
+        	crossOrigin: true
+      		}).addTo(map);
+      		L.marker([59.859111, 17.639168]).addTo(map) //longitut /lattitut hämtas hit
+    		.bindPopup('Här ligger restaurangen!')
+    		.openPopup();
+    		</script>
 	 
 	 <aside id="commentsSection"> 
         
