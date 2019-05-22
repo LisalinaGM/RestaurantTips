@@ -32,12 +32,14 @@
       <div id="adimage"><img src="assets/img/trensstallen.jpg" alt=""/></div>
       <nav>
         <ul>
+		<li><a href="start.php" title="Link">Home</a></li>
+		<li><a href="searchTip.php" title="Link">Search for Tips</a></li>
           <li><a href="postTip.php" title="Link">Post a tip</a></li>
           <li><a href="basilico.php" title="Link">Basilico</a></li>
           <li><a href="frenchi.php" title="Link">Frenchi</a></li>
           <li><a href="#" title="Link">Iberico</a></li>
           <li><a href="#" title="Link">Aaltos</a></li>
-          <li><a href="start.php" title="Link">Home</a></li>
+          <li><a href="#" title="Link">Contact us</a></li>
         </ul>
       </nav>
     </section>
