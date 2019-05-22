@@ -25,8 +25,6 @@ include('processes/session.php');
 				<form name = "inputForm" action="processes/tipProcess.php" onsubmit = "return validateForm()" method = "post">
 					<br><label for="title">Tip title</label>
 					<br><input type="text" id="title" name="title" placeholder="ex. Good atmosphere at this restaurant">
-					<br><label for="email">Email-address</label>
-					<br><input type="text" id="email" name="email" placeholder="ex. lisa@gmail.com">
 					<br><label for="restaurant">Restaurant</label>
 					<br><select name="restaurant">
 							<option value="Basilico">Basilico</option>
