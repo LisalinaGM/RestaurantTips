@@ -34,7 +34,7 @@
 	$resultError = mysqli_query($connection, $queryError);
 	if(mysqli_num_rows($resultError) > 0){
 		echo "registration failed";
-		header("Refresh: 5; URL=../confirms/registrationFailed.php");
+		header("Refresh: 0; URL=../confirms/registrationFailed.php");
 	}
 	else{
 	
@@ -49,6 +49,6 @@
 		echo $query;
 		echo "<br>successful registration!";
 	
-		header("Refresh: 5; URL=../start.php");
+		header("Refresh: 0; URL=../confirms/registrationSuccess.php");
 	}
 ?>
