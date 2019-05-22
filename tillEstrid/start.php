@@ -10,7 +10,7 @@
 <div id="mainwrapper">
   <header> 
     <div id="logo"> <img src="assets/img/loggafärg.png" alt="sample logo"<!-- Company Logo text --></div>
-    <nav> <a href="register.php" title="Link">Sign up</a> <a href="login.php" title="Link">Log in</a><a href="loggOut.php" title="Link">Log out</a> </nav>
+    <nav> <a href="register.php" title="Link">Sign up</a> <a href="login.php" title="Link">Log in</a><a href="loggedOut.php" title="Link">Log out</a> </nav>
   </header>
   <div id="content">
     <section id="mainContent"> 
