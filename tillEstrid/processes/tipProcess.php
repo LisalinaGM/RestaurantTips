@@ -13,13 +13,13 @@
 	else{
 	echo "Connection worked.";
 	}
-
+	session_star();
 	$title = mysqli_real_escape_string($connection, $_POST["title"]);
-	$email = mysqli_real_escape_string($connection, $_POST["email"]);
+	$email = $_SESSION['login_user'];
 	$content = mysqli_real_escape_string($connection, $_POST["tip"]);
 	$restaurant = mysqli_real_escape_string($connection, $_POST["restaurant"]);
 	
-	if(empty(trim($title)) !== true && empty(trim($email)) !== true && empty(trim($content)) !== true){//checks so the strings are not empty
+	if(empty(trim($title)) !== true && empty(trim($content)) !== true){//checks so the strings are not empty
 		if(strpos($email, '@') !== false){
 			$queryUserID = "SELECT userid FROM Webusers WHERE email = '$email'";
 			$resultUserID = mysqli_query($connection, $queryUserID);
@@ -47,5 +47,5 @@
 	}
 	
 	
-	header("Refresh: 5; URL=../start.php");
+	header("Refresh: 0; URL=../start.php");
 ?>
