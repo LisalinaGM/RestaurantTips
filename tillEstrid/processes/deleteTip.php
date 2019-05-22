@@ -16,5 +16,5 @@
 		$queryDelete = "DELETE FROM Tips WHERE tipid = '$tipID'";
 		$connection -> query($queryDelete);
 	}
-	header("Refresh: 0; URL=../frenchi.php");
+	header("Refresh: 0; URL=../start.php");
 ?>
