@@ -48,7 +48,7 @@ include('processes/session.php');
 				}
 				
 				$activeRestaurant = "Frenchi";
-				$sql = "SELECT title, content, userid FROM Tips, Restaurants WHERE Tips.restaurantid = Restaurants.id AND Restaurants.name = '$activeRestaurant'";
+				$sql = "SELECT tipid, title, content, userid FROM Tips, Restaurants WHERE Tips.restaurantid = Restaurants.id AND Restaurants.name = '$activeRestaurant'";
 				$result = $connection->query($sql);
 		 		$user = $_SESSION['login_user'];
 
