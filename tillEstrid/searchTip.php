@@ -76,7 +76,6 @@
      </aside>
     </section>
     <section id="sidebar"> 
-      <input type="text" placeholder="Search">
       <div id="adimage"><img src="assets/img/trensstallen.jpg"/></div>
       <nav>
         <ul>
