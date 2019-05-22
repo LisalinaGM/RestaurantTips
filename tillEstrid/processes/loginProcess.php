@@ -30,9 +30,13 @@
 			$_SESSION['login_user']=$email;
 			header("Refresh: 5; URL=../start.php");
 		}
+		else{
+			header("Refresh: 5; URL=../confirms/loginFailed.php");
+		}
 	}
 	else{
 		echo "<br> login failed";
 		header("Refresh: 5; URL=../confirms/loginFailed.php");
 	}
+
 ?>
