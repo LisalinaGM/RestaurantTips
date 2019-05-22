@@ -13,16 +13,26 @@
 	$output='';
 	if(isset($_POST['search'])){
 		$searched = mysqli_real_escape_string($connection, $_POST["search"]);
-		$query = "SELECT title, content FROM Tips WHERE title LIKE '%$searched%' OR content LIKE '%$searched%'";
-		$count = mysql_num_rows($query);
-		if($count == 0){
-			$output = "There were no matching tips to your search";
-		}
-		else{
-			while($row = mysql_fetch_array($query)){
-				$title = $row['title'];
-				$content = $row['content'];
-				$output .= '<div> '.$title.' '.$content.'</div>';
+		$restaurant = mysqli_real_escape_string($connection, $_POST["restaurant"]);
+		$queryRestaurantID = "SELECT id FROM Restaurants WHERE name = '$restaurant'";
+		$resultRestaurantID = mysqli_query($connection, $queryRestaurantID);
+		if($resultRestaurantID->num_rows == 1){
+			$row = $resultRestaurantID -> fetch_assoc();
+			$restaurantID = $row["id"];
+			$query = "SELECT title, content FROM Tips WHERE restaurantid = '$restaurantID' AND (title LIKE '%$searched%' OR content LIKE '%$searched%')";
+			$result = $connection -> query($query);
+			$count = $result-> num_rows;
+			if($count == 0){
+				$output = "<h2>There were no matching tips to your search</h2>";
+			}
+			else{
+				$resultSearch = mysqli_query($connection, $query);
+				while($row = $resultSearch-> fetch_assoc()){
+					$title = $row['title'];
+					$content = $row['content'];
+					$output .= '<p><h2>Title: '.$title.'<br>Tip: <br>'.$content.'</h2></p>';
+					
+				}
 			}
 		}
 	}
@@ -56,7 +66,9 @@
 				<option value="Aaltos">Aaltos</option>
 			</select>
 			<br><input type="submit" value="Search">
+			<br>
 		</form><aside id="authorInfo"> 
+		
 		<?php print ("$output");?>
      </aside>
     </section>
