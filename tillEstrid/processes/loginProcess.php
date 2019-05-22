@@ -28,15 +28,15 @@
 			echo "<br> successful login";
 			$_SESSION['loggedin'] = true;
 			$_SESSION['login_user']=$email;
-			header("Refresh: 5; URL=../start.php");
+			header("Refresh: 0; URL=../confirms/loginSuccess.php");
 		}
 		else{
-			header("Refresh: 5; URL=../confirms/loginFailed.php");
+			header("Refresh: 0; URL=../confirms/loginFailed.php");
 		}
 	}
 	else{
 		echo "<br> login failed";
-		header("Refresh: 5; URL=../confirms/loginFailed.php");
+		header("Refresh: 0; URL=../confirms/loginFailed.php");
 	}
 
 ?>
